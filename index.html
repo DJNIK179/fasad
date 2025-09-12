@@ -1,277 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/fonts.css" />
     <title>ФасадПрофи</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Фасад<span>Профи</span></div>
-                <nav>
-                    <ul>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#projects">Проекты</a></li>
-                        <li><a href="#order">Заказать</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                    </ul>
-                </nav>
-                <div class="contact-header">
-                    <div class="city-selector" onclick="toggleCityDropdown()">
-                        <span><i class="fas fa-map-marker-alt"></i> Москва <i class="fas fa-chevron-down"></i></span>
-                        <div class="city-dropdown" id="cityDropdown">
-                            <div onclick="selectCity('Москва')">Москва</div>
-                            <div onclick="selectCity('Санкт-Петербург')">Санкт-Петербург</div>
-                            <div onclick="selectCity('Новосибирск')">Новосибирск</div>
-                            <div onclick="selectCity('Екатеринбург')">Екатеринбург</div>
-                            <div onclick="selectCity('Казань')">Казань</div>
-                        </div>
-                    </div>
-                    <div class="phone">+7 (495) 123-45-67</div>
-                    <button class="btn">Заказать звонок</button>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">Фасад<span>Профи</span></div>
+          <nav>
+            <ul>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#projects">Проекты</a></li>
+              <li><a href="#order">Заказать</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="contact-header">
+            <div class="city-selector" onclick="toggleCityDropdown()">
+              <span
+                ><i class="fas fa-map-marker-alt"></i> Москва
+                <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="city-dropdown" id="cityDropdown">
+                <div onclick="selectCity('Москва')">Москва</div>
+                <div onclick="selectCity('Санкт-Петербург')">
+                  Санкт-Петербург
                 </div>
+                <div onclick="selectCity('Новосибирск')">Новосибирск</div>
+                <div onclick="selectCity('Екатеринбург')">Екатеринбург</div>
+                <div onclick="selectCity('Казань')">Казань</div>
+              </div>
             </div>
+            <div class="phone">+7 (495) 123-45-67</div>
+            <button class="btn">Заказать звонок</button>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- Герой секция -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Утепление фасадов домов, квартир и зданий</h1>
-                    <p>Профессиональные услуги по утеплению с гарантией качества. Экономьте до 40% на отоплении зимой! Работаем с 2008 года по современным технологиям.</p>
-                    <button class="btn">Рассчитать стоимость</button>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Дом с утепленным фасадом">
-                </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero__title">ФАСАД <span>ПРОФИ</span></h1>
+            <div class="hero__subtitle">
+              <p class="hero__subtitle-general">Утепление фасадов</p>
+              <p class="hero__subtitle-accent">под ключ</p>
             </div>
+            <p class="hero__text-descr">
+              Холодно, плесень? <span>Защити свой дом!</span>
+            </p>
+            <div class="hero__icons">
+              <div class="heto__icons-free hero__block">
+                <div class="hero__icons-title">Бесплатно</div>
+                <p class="hero__icons-text">замер и консультация</p>
+                <div class="hero__block-icon"></div>
+              </div>
+              <div class="heto__icons-contract hero__block">
+                <div class="hero__icons-title">Заключение</div>
+                <p class="hero__icons-text">договора</p>
+              </div>
+            </div>
+            <!-- <button class="btn">Рассчитать стоимость</button> -->
+          </div>
+          <div class="hero-image">
+            <img src="/images/hero-img.jpg" alt="Дом с утепленным фасадом" />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Услуги -->
     <section id="services" class="services">
-        <div class="container">
-            <h2>Наши услуги</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Утепление частных домов</h3>
-                        <p>Комплексное утепление фасадов частных домов с использованием современных материалов. Гарантия 10 лет.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Утепление многоквартирных домов</h3>
-                        <p>Работы по утеплению фасадов многоквартирных домов с соблюдением всех нормативов и стандартов.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-trowel"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Штукатурные работы</h3>
-                        <p>Декоративная и черновая штукатурка фасадов после утепления. Большой выбор материалов и текстур.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img class="services__img" src="/images/services-1.jpg" alt="" />
+            <div class="service-content">
+              <h3 class="services__title">
+                Утепление фасада квартиры/дома под ключ :
+              </h3>
+              <p class="services__text">
+                Наружное утепление стен по технологии. <br />
+                Включено: замер, расчёт, материалы, доставка, монтаж, отделка.
+              </p>
+              <ul class="services__card-list">
+                <li class="services__card-item">
+                  Повышение энергоэффективности
+                </li>
+                <li class="services__card-item">Снижение теплопотерь до 40%</li>
+                <li class="services__card-item">Срок выполнения: до 3 дней</li>
+              </ul>
             </div>
+          </div>
+          <div class="service-card">
+            <img class="services__img" src="/images/services-1.jpg" alt="" />
+            <div class="service-content">
+              <h3 class="services__title">
+                Утепление фасада частного дома под ключ
+              </h3>
+              <p class="services__text">
+                Наружное утепление стен по технологии. <br />
+                Включено: замер, расчёт, материалы, доставка, монтаж, отделка.
+              </p>
+              <ul class="services__card-list">
+                <li class="services__card-item">
+                  Повышение энергоэффективности
+                </li>
+                <li class="services__card-item">Снижение теплопотерь до 40%</li>
+                <li class="services__card-item">Срок выполнения: до 3 дней</li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-card">
+            <img class="services__img" src="/images/services-1.jpg" alt="" />
+            <div class="service-content">
+              <h3 class="services__title">Дополнительные работы</h3>
+              <p class="services__text"></p>
+              <ul class="services__card-list">
+                <li class="services__card-item">Штукатурка, покраска</li>
+                <li class="services__card-item">Обработка короедом</li>
+                <li class="services__card-item">Ремонт рустов</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Проекты -->
     <section id="projects" class="projects">
-        <div class="container">
-            <h2>Наши проекты</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-house-user"></i>
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Частный дом в Подмосковье</h3>
-                        <p>Утепление пеноплексом с последующей отделкой декоративной штукатуркой.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-city"></i>
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Многоквартирный дом в Москве</h3>
-                        <p>Комплексное утепление фасада с заменой оконных блоков.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Производственное здание</h3>
-                        <p>Утепление стен и кровли производственного помещения.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Наши проекты</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/port-1.jpg" alt="" />
             </div>
+            <div class="project-overlay">
+              <h3>Частный дом в Подмосковье</h3>
+              <p>
+                Утепление пеноплексом с последующей отделкой декоративной
+                штукатуркой.
+              </p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/port-2.jpg" alt="" />
+            </div>
+            <div class="project-overlay">
+              <h3>Многоквартирный дом в Москве</h3>
+              <p>Комплексное утепление фасада с заменой оконных блоков.</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/port-3.jpg" alt="" />
+            </div>
+            <div class="project-overlay">
+              <h3>Производственное здание</h3>
+              <p>Утепление стен и кровли производственного помещения.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Отзывы -->
     <section id="reviews" class="reviews">
-        <div class="container">
-            <h2>Отзывы клиентов</h2>
-            <div class="reviews-slider">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <div class="review-name">Иван Петров</div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Заказал утепление дома в прошлом году. Результатом очень доволен! Зимой стало значительно теплее, а счета за отопление уменьшились почти вдвое. Работу выполнили качественно и в срок.</p>
+      <div class="container">
+        <h2>Отзывы клиентов</h2>
+        <div class="reviews-slider">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="review-name">Иван Петров</div>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
                 </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <div class="review-name">Мария Сидорова</div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Обратилась в компанию для утепления квартиры. Сделали все очень аккуратно, не ожидала такого качества! Теперь у нас не дует из окон, и стены не промерзают. Соседи тоже заметили разницу.</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <div class="review-name">Алексей Комаров</div>
-                            <div class="review-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Работали с этой компанией над утеплением офисного здания. Все сделали в срок, без задержек. Персонал вежливый и профессиональный. После утепления в помещениях стало комфортнее работать.</p>
-                </div>
+              </div>
             </div>
+            <p>
+              Заказал утепление дома в прошлом году. Результатом очень доволен!
+              Зимой стало значительно теплее, а счета за отопление уменьшились
+              почти вдвое. Работу выполнили качественно и в срок.
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="review-name">Мария Сидорова</div>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p>
+              Обратилась в компанию для утепления квартиры. Сделали все очень
+              аккуратно, не ожидала такого качества! Теперь у нас не дует из
+              окон, и стены не промерзают. Соседи тоже заметили разницу.
+            </p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="review-name">Алексей Комаров</div>
+                <div class="review-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p>
+              Работали с этой компанией над утеплением офисного здания. Все
+              сделали в срок, без задержек. Персонал вежливый и
+              профессиональный. После утепления в помещениях стало комфортнее
+              работать.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Форма заказа -->
     <section id="order" class="order">
-        <div class="container">
-            <div class="order-content">
-                <div class="order-form-container">
-                    <h2>Заказать расчет стоимости</h2>
-                    <p>Оставьте номер телефона и наш специалист свяжется с вами для бесплатной консультации</p>
-                    <form class="order-form">
-                        <div class="form-group">
-                            <input type="tel" placeholder="Ваш телефон" required>
-                        </div>
-                        <button type="submit" class="btn">Отправить заявку</button>
-                        <div class="form-note">Мы перезвоним в течение 15 минут</div>
-                    </form>
-                </div>
-            </div>
+      <div class="container">
+        <div class="order-content">
+          <div class="order-form-container">
+            <h2 class="order__form-title">Заказать расчет стоимости</h2>
+            <p class="order__form-text">
+              Оставьте номер телефона и наш специалист свяжется с вами для
+              бесплатной консультации
+            </p>
+            <form class="order-form">
+              <div class="form-group">
+                <input type="tel" placeholder="Ваш телефон" required />
+              </div>
+              <button type="submit" class="btn form__btn">
+                Отправить заявку
+              </button>
+              <div class="form-note">Мы перезвоним в течение 15 минут</div>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Контакты -->
     <section id="contacts" class="contacts">
-        <div class="container">
-            <h2>Контакты</h2>
-            <div class="contacts-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Адрес</h3>
-                    <p>г. Москва, ул. Строителей, 15, офис 204</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Телефон</h3>
-                    <p>+7 (495) 123-45-67</p>
-                    <p>+7 (800) 100-50-50</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>info@teplodom.ru</p>
-                    <p>order@teplodom.ru</p>
-                </div>
+      <div class="container">
+        <h2>Контакты</h2>
+        <div class="contact__inner">
+          <h2 class="contact__inner-title">Свяжитесь с нами</h2>
+          <div class="contacts-grid">
+            <div class="contact-card">
+              <h3 class="contact__title">Телефон</h3>
+              <p>+7 (495) 123-45-67</p>
+              <p>+7 (800) 100-50-50</p>
             </div>
+            <div class="contact-card">
+              <h3>Email</h3>
+              <p>info@teplodom.ru</p>
+              <p>order@teplodom.ru</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Футер -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>ТеплоДом</h3>
-                    <p>Профессиональное утепление фасадов домов и квартир с 2008 года. Гарантия качества и доступные цены.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Услуги</h3>
-                    <ul>
-                        <li>Утепление частных домов</li>
-                        <li>Утепление многоквартирных домов</li>
-                        <li>Штукатурные работы</li>
-                        <li>Тепловизионное обследование</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Контакты</h3>
-                    <p>г. Москва, ул. Строителей, 15</p>
-                    <p>+7 (495) 123-45-67</p>
-                    <p>info@teplodom.ru</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 ТеплоДом. Все права защищены.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>ТеплоДом</h3>
+            <p>
+              Профессиональное утепление фасадов домов и квартир с 2008 года.
+              Гарантия качества и доступные цены.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Услуги</h3>
+            <ul>
+              <li>Утепление частных домов</li>
+              <li>Утепление многоквартирных домов</li>
+              <li>Штукатурные работы</li>
+              <li>Тепловизионное обследование</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Контакты</h3>
+            <p>г. Москва, ул. Строителей, 15</p>
+            <p>+7 (495) 123-45-67</p>
+            <p>info@teplodom.ru</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 ТеплоДом. Все права защищены.</p>
+        </div>
+      </div>
     </footer>
 
-
     <script src="/main.js"></script>
-</body>
+  </body>
 </html>
