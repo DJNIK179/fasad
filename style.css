@@ -1,6 +1,5 @@
 :root {
   --general-bg: #f6f6f6;
-  --general-text: #;
   --accent-text: #1e1e1e;
   --accent-color: #ffd700;
 }
@@ -356,7 +355,6 @@ section h2 {
   padding: 20px;
 }
 
-
 /* Проекты */
 .projects-grid {
   display: grid;
@@ -452,8 +450,7 @@ section h2 {
 /* Форма заказа */
 .order {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/images/form-1.jpg")
-      no-repeat center center/cover;
+    url("/images/form-1.jpg") no-repeat center center/cover;
   color: white;
   padding: 100px 0;
 }
@@ -511,63 +508,36 @@ section h2 {
   text-align: center;
 }
 
-
 /* Контакты */
+
 .contact__inner {
-  background: var(--accent-text);
-  padding: 30px 50px 40px;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
 }
 
-.contact__inner-title {
-  color: var(--general-bg);
-  font-size: 20px;
+.contact__item-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  background: #333333;
 }
 
-.contacts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.contact__title {
+.contact__item-title {
   font-size: 24px;
-  margin-bottom: 20px;
 }
 
-.contact__phone {
+.contac__item-link {
+  font-size: 24px;
+}
+
+.contact__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  font-size: 20px;
-}
-
-.contact__icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-.contact__item-icon img{
-  width: 50px;
-  height: 50px;
-}
-
-.contact-card {
-  text-align: center;
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
-}
-
-.contact-icon {
-  font-size: 2.5rem;
-  color: #333333;
-  margin-bottom: 15px;
+  gap: 10px;
 }
 
 /* Футер */
@@ -600,56 +570,4 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
   font-size: 0.9rem;
-}
-
-/* Адаптивность */
-@media (max-width: 968px) {
-  .hero-content {
-    flex-direction: column;
-  }
-
-  .hero-text {
-    padding-right: 0;
-    margin-bottom: 30px;
-  }
-
-  .hero {
-    background: linear-gradient(rgba(40, 40, 40, 0.9), rgba(40, 40, 40, 0.9)),
-      url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80")
-        no-repeat center center/cover;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
-    margin: 15px 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 5px 10px;
-  }
-
-  .contact-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .review-card {
-    flex: 0 0 calc(100% - 20px);
-  }
-
-  .order-form-container {
-    padding: 25px;
-  }
 }
