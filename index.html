@@ -238,12 +238,12 @@
 
     <!-- Модальное окно -->
     <div id="imageModal" class="modal">
-      <span class="close">&times;</span>
-      <button class="nav-btn prev">&lt;</button>
-      <button class="nav-btn next">&gt;</button>
       <div class="modal-content">
-        <img class="modal-image" id="modalImage" src="" alt="" />
-        <div class="modal-caption" id="modalCaption"></div>
+        <span class="close">&times;</span>
+        <img id="modalImage" class="modal-image" src="" alt="" />
+        <div id="modalCaption" class="modal-caption"></div>
+        <button class="nav-btn prev">&lt;</button>
+        <button class="nav-btn next">&gt;</button>
       </div>
     </div>
 
@@ -265,72 +265,202 @@
       </div>
     </section>
 
-    <!-- Форма заказа -->
-    <section id="order" class="order">
+    <section class="contact">
       <div class="container">
-        <div class="order-content">
-          <div class="order-form-container">
-            <h2 class="order__form-title">Заказать расчет стоимости</h2>
-            <p class="order__form-text">
-              Оставьте номер телефона и наш специалист свяжется с вами для
-              бесплатной консультации
-            </p>
-            <form class="order-form" id="orderForm">
-              <div class="form-group">
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="+7 (___) ___-__-__"
-                  required
-                />
-                <div class="error-message" id="phoneError">
-                  Пожалуйста, введите корректный номер телефона
+        <div class="contact__inner">
+          <div class="contact__social">
+            <div class="contact__social-title">Контактая информация</div>
+            <ul class="contact__social-info">
+              <li class="contact__info-item">
+                <div class="contact__info-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </div>
-              </div>
-              <button type="submit" class="btn form__btn" id="submitBtn">
-                Отправить заявку
-              </button>
-              <div class="form-note">Мы перезвоним в течение 15 минут</div>
-            </form>
+                <a href="telto:" class="contact__item contact__item-tel"
+                  >+7 999 999 12 12</a
+                >
+              </li>
+              <li class="contact__info-item">
+                <div class="contact__info-icon">
+                  <svg
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 2L8.10764 6.61227L8.10967 6.61396C8.78785 7.11128 9.12714 7.3601 9.49876 7.45621C9.82723 7.54117 10.1725 7.54117 10.501 7.45621C10.8729 7.36001 11.2132 7.11047 11.8926 6.61227C11.8926 6.61227 15.8101 3.60594 18 2M1 11.8002V4.2002C1 3.08009 1 2.51962 1.21799 2.0918C1.40973 1.71547 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.4796 1 17.9074 1.21799C18.2837 1.40973 18.5905 1.71547 18.7822 2.0918C19 2.5192 19 3.07899 19 4.19691V11.8036C19 12.9215 19 13.4805 18.7822 13.9079C18.5905 14.2842 18.2837 14.5905 17.9074 14.7822C17.48 15 16.921 15 15.8031 15H4.19691C3.07899 15 2.5192 15 2.0918 14.7822C1.71547 14.5905 1.40973 14.2842 1.21799 13.9079C1 13.4801 1 12.9203 1 11.8002Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:" class="contact__item contact__item-mail"
+                  >fasad@mail.ru</a
+                >
+              </li>
+              <li class="contact__info-item">
+                <div class="contact__info-icon">
+                  <svg
+                    width="16"
+                    height="20"
+                    viewBox="0 0 16 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 7.92285C1 12.7747 5.24448 16.7869 7.12319 18.3252C7.39206 18.5454 7.52811 18.6568 7.72871 18.7132C7.88491 18.7572 8.1148 18.7572 8.271 18.7132C8.47197 18.6567 8.60707 18.5463 8.87695 18.3254C10.7557 16.7871 14.9999 12.7751 14.9999 7.9233C14.9999 6.08718 14.2625 4.32605 12.9497 3.02772C11.637 1.72939 9.8566 1 8.00008 1C6.14357 1 4.36301 1.7295 3.05025 3.02783C1.7375 4.32616 1 6.08674 1 7.92285Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 7C6 8.10457 6.89543 9 8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <a href="#" class="contact__item contact__item-adress"
+                  >г. Москва ул.Блюхера д 10</a
+                >
+              </li>
+            </ul>
+            <ul class="contact__links">
+              <a href="#" class="contact__link">
+                <svg
+                  width="20"
+                  height="17"
+                  viewBox="0 0 20 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.9362 1.51976L16.9062 15.7048C16.6802 16.7038 16.1002 16.9288 15.2622 16.4778L10.7172 13.1258L8.49216 15.2528C8.26716 15.4788 8.04116 15.7048 7.52516 15.7048L7.88016 11.0298L16.3582 3.32576C16.7122 2.97076 16.2612 2.84176 15.8102 3.13276L5.26916 9.77276L0.723157 8.38676C-0.275843 8.06476 -0.275843 7.38676 0.949157 6.93676L18.6142 0.0697602C19.4842 -0.18824 20.2262 0.26376 19.9362 1.51976Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="contact__link">
+                <svg
+                  width="24"
+                  height="14"
+                  viewBox="0 0 24 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M23.45 0.948C23.616 0.402 23.45 0 22.655 0H20.03C19.362 0 19.054 0.347 18.887 0.73C18.887 0.73 17.552 3.926 15.661 6.002C15.049 6.604 14.771 6.795 14.437 6.795C14.27 6.795 14.019 6.604 14.019 6.057V0.948C14.019 0.292 13.835 0 13.279 0H9.151C8.734 0 8.483 0.304 8.483 0.593C8.483 1.214 9.429 1.358 9.526 3.106V6.904C9.526 7.737 9.373 7.888 9.039 7.888C8.149 7.888 5.984 4.677 4.699 1.003C4.45 0.288 4.198 0 3.527 0H0.9C0.15 0 0 0.347 0 0.73C0 1.412 0.89 4.8 4.145 9.281C6.315 12.341 9.37 14 12.153 14C13.822 14 14.028 13.632 14.028 12.997V10.684C14.028 9.947 14.186 9.8 14.715 9.8C15.105 9.8 15.772 9.992 17.33 11.467C19.11 13.216 19.403 14 20.405 14H23.03C23.78 14 24.156 13.632 23.94 12.904C23.702 12.18 22.852 11.129 21.725 9.882C21.113 9.172 20.195 8.407 19.916 8.024C19.527 7.533 19.638 7.314 19.916 6.877C19.916 6.877 23.116 2.451 23.449 0.948"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="contact__link">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20C8.23277 20.003 6.4966 19.5353 4.97002 18.645L0.00401546 20L1.35602 15.032C0.464974 13.5049 -0.00308163 11.768 1.52687e-05 10C1.52687e-05 4.477 4.47702 0 10 0ZM6.59202 5.3L6.39201 5.308C6.26271 5.31691 6.13636 5.35087 6.02002 5.408C5.91159 5.46951 5.81258 5.5463 5.72602 5.636C5.60602 5.749 5.53802 5.847 5.46502 5.942C5.09514 6.4229 4.89599 7.01331 4.89902 7.62C4.90102 8.11 5.02902 8.587 5.22902 9.033C5.63802 9.935 6.31102 10.89 7.19902 11.775C7.41302 11.988 7.62302 12.202 7.84902 12.401C8.95245 13.3724 10.2673 14.073 11.689 14.447L12.257 14.534C12.442 14.544 12.627 14.53 12.813 14.521C13.1042 14.5056 13.3885 14.4268 13.646 14.29C13.7769 14.2223 13.9047 14.1489 14.029 14.07C14.029 14.07 14.0713 14.0413 14.154 13.98C14.289 13.88 14.372 13.809 14.484 13.692C14.568 13.6053 14.638 13.5047 14.694 13.39C14.772 13.227 14.85 12.916 14.882 12.657C14.906 12.459 14.899 12.351 14.896 12.284C14.892 12.177 14.803 12.066 14.706 12.019L14.124 11.758C14.124 11.758 13.254 11.379 12.722 11.137C12.6663 11.1128 12.6067 11.0989 12.546 11.096C12.4776 11.0888 12.4084 11.0965 12.3432 11.1184C12.278 11.1403 12.2182 11.176 12.168 11.223C12.163 11.221 12.096 11.278 11.373 12.154C11.3315 12.2098 11.2744 12.2519 11.2088 12.2751C11.1433 12.2982 11.0723 12.3013 11.005 12.284C10.9398 12.2666 10.876 12.2446 10.814 12.218C10.69 12.166 10.647 12.146 10.562 12.11C9.98789 11.8599 9.45646 11.5215 8.98702 11.107C8.86102 10.997 8.74402 10.877 8.62402 10.761C8.23063 10.3842 7.88777 9.95799 7.60401 9.493L7.54501 9.398C7.50328 9.3338 7.46905 9.26501 7.44302 9.193C7.40502 9.046 7.50402 8.928 7.50402 8.928C7.50402 8.928 7.74702 8.662 7.86002 8.518C7.97002 8.378 8.06302 8.242 8.12302 8.145C8.24102 7.955 8.27802 7.76 8.21602 7.609C7.93602 6.925 7.64668 6.24467 7.34802 5.568C7.28902 5.434 7.11402 5.338 6.95502 5.319C6.90102 5.31233 6.84702 5.307 6.79302 5.303C6.65874 5.2953 6.52411 5.29663 6.39002 5.307L6.59202 5.3Z"
+                    fill="black"
+                  />
+                </svg>
+              </a>
+            </ul>
+          </div>
+          <div class="contact__form">
+            <div class="contact__form-title">Получить консультацию</div>
+
+            <div class="form-container">
+              <form id="feedback-form">
+                <div class="form-row form-name">
+                  <div class="form-group">
+                    <label for="firstName"
+                      >Имя <span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      placeholder="Ваше имя"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lastName"
+                      >Фамилия <span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      placeholder="Ваша фамилия"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row form-tel">
+                  <div class="form-group">
+                    <label for="phone"
+                      >Номер телефона <span class="required">*</span></label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder="+7 (XXX) XXX-XX-XX"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group form-group-full">
+                    <button type="submit" class="btn form-btn">
+                      Отправить заявку
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Контакты -->
-    <section id="contacts" class="contacts">
-      <div class="container">
-        <h2>Контакты</h2>
-        <ul class="contact__inner">
-          <li class="contact__item">
-            <div class="contact__item-icon"></div>
-            <div class="contact__item-title">Телефон</div>
-            <a href="telto: +79999999999" class="contac__item-link"
-              >+7 (999) 123 12 12</a
-            >
-          </li>
-          <li class="contact__item">
-            <div class="contact__item-icon"></div>
-            <div class="contact__item-title">Телефон</div>
-            <a href="telto: +79999999999" class="contac__item-link"
-              >+7 (999) 123 12 12</a
-            >
-          </li>
-          <li class="contact__item">
-            <div class="contact__item-icon"></div>
-            <div class="contact__item-title">Телефон</div>
-            <a href="telto: +79999999999" class="contac__item-link"
-              >+7 (999) 123 12 12</a
-            >
-          </li>
-          <li class="contact__item">
-            <div class="contact__item-icon"></div>
-            <div class="contact__item-title">Телефон</div>
-            <a href="telto: +79999999999" class="contac__item-link"
-              >+7 (999) 123 12 12</a
-            >
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -338,37 +468,23 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          <div class="footer-column">
-            <h3>ТеплоДом</h3>
-            <p>
-              Профессиональное утепление фасадов домов и квартир с 2008 года.
-              Гарантия качества и доступные цены.
-            </p>
-          </div>
-          <div class="footer-column">
-            <h3>Услуги</h3>
-            <ul>
-              <li>Утепление частных домов</li>
-              <li>Утепление многоквартирных домов</li>
-              <li>Штукатурные работы</li>
-              <li>Тепловизионное обследование</li>
+          <div class="footer__logo logo">Фасад<span>Профи</span></div>
+          <div class="footer__right">
+            <ul class="footer__nav">
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#projects">Проекты</a></li>
+              <li><a href="#order">Заказать</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#contacts">Контакты</a></li>
             </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Контакты</h3>
-            <p>г. Москва, ул. Строителей, 15</p>
-            <p>+7 (495) 123-45-67</p>
-            <p>info@teplodom.ru</p>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2023 ТеплоДом. Все права защищены.</p>
+          <p>&copy; 2025 ФасадПрофи. Все права защищены.</p>
         </div>
       </div>
     </footer>
 
-    <script src="/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
