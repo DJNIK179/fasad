@@ -156,7 +156,7 @@ nav ul li a:hover {
   color: #333333;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s;
@@ -164,6 +164,12 @@ nav ul li a:hover {
 
 .btn:hover {
   background-color: #ffc400;
+}
+
+.hero__btn-accent:hover {
+  background-color: #ffc400;
+  color: var(--accent-text);
+  border: 1px solid var(--accent-color);
 }
 
 /* Герой секция */
@@ -194,7 +200,7 @@ nav ul li a:hover {
 
 .hero__title {
   color: var(--accent-color);
-  max-width: 716px;
+  max-width: 700px;
 }
 
 .hero__title span {
@@ -203,14 +209,14 @@ nav ul li a:hover {
 
 .hero h1 {
   font-size: 36px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .hero__subtitle {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size:28px;
+  font-size: 28px;
 }
 
 .hero__subtitle-accent {
@@ -222,13 +228,21 @@ nav ul li a:hover {
 }
 
 .hero__text-descr {
-  font-family: "Jost-SemiBold";
+  font-family: "Jost-Regular";
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-.hero__text-descr span {
-  color: var(--accent-color);
+.hero__icons-text {
+  font-family: 'Jost-Regular';
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero__icons-text:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .hero-image {
@@ -245,7 +259,6 @@ nav ul li a:hover {
 }
 
 .hero__btn {
-  margin-top: 30px;
   font-size: 20px;
 }
 
@@ -253,8 +266,16 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.hero__icons-text::before {
+  content: '';
+  display: flex;
+  width: 8px;
+  height: 9px;
+  border-radius: 100%;
+  background: var(--accent-color);
 }
 
 .hero__block {
@@ -274,6 +295,14 @@ nav ul li a:hover {
   position: absolute;
   width: 65px;
   height: 65px;
+}
+
+.hero__btn-accent {
+  background: transparent;
+  border: 1px solid var(--general-bg);
+  border-radius: 10px;
+  color: var(--general-bg);
+  margin-left: 30px;
 }
 
 /* Секции */
@@ -314,25 +343,53 @@ section h2 {
 
 .services__img {
   width: 100%;
+  height: 270px;
+   object-position: center center;
+   object-fit: cover;
 }
 
 .services__title {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--accent-text);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .services__text {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+}
+
+.services__card-list {
+  margin-top: 20px;
 }
 
 .services__card-item {
   margin-bottom: 5px;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.services__card-item::before {
+  content: '';
+  display: flex;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: var(--accent-text);
 }
 
 .service-content {
   padding: 20px;
+}
+
+.services__card-price {
+  font-family: 'Jost-SemiBold';
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 /* Проекты */
@@ -396,6 +453,9 @@ section h2 {
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid #f0f0f0;
+
+  display: flex;
+  align-items: center;
 }
 
 .review-header {
@@ -443,7 +503,6 @@ section h2 {
   margin: 0 auto;
 }
 
-
 .order-form-container {
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
@@ -488,6 +547,14 @@ section h2 {
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* ----- */
+
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;}
 
 /* Контакты */
 
@@ -552,3 +619,221 @@ footer {
   padding-top: 20px;
   font-size: 0.9rem;
 }
+
+    /* Стили для модального окна */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .modal-image {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+    
+    .modal-caption {
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 18px;
+    }
+    
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 15px;
+      border: none;
+      z-index: 1001;
+    }
+    
+    .prev {
+      left: 15px;
+    }
+    
+    .next {
+      right: 15px;
+    }
+    
+    .nav-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+
+        /* Стили для слайдера (больше 6 элементов) */
+    .projects-grid.slider-mode {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      gap: 0;
+      scroll-behavior: smooth;
+    }
+    
+    .projects-grid.slider-mode::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .projects-grid.slider-mode .project-card {
+      flex: 0 0 calc(33.333% - 20px);
+      min-width: calc(33.333% - 20px);
+      margin: 0 10px;
+      scroll-snap-align: start;
+    }
+    
+    /* Стили для мобильных устройств в режиме слайдера */
+    @media (max-width: 992px) {
+      .projects-grid.slider-mode .project-card {
+        flex: 0 0 calc(50% - 20px);
+        min-width: calc(50% - 20px);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .projects-grid.slider-mode .project-card {
+        flex: 0 0 calc(100% - 20px);
+        min-width: calc(100% - 20px);
+      }
+    }
+    
+
+    /* Навигация слайдера */
+    .slider-nav {
+      display: none;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+    
+    .slider-nav.active {
+      display: flex;
+    }
+    
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .slider-dot.active {
+      background: #333;
+    }
+    
+    .slider-arrows {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 10;
+    }
+    
+    .slider-arrows.active {
+      display: flex;
+    }
+    
+    .arrow {
+      position: absolute;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      pointer-events: all;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .arrow:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+    
+    .arrow.prev-arrow {
+      left: -25px;
+    }
+    
+    .arrow.next-arrow {
+      right: -25px;
+    }
+    
+    /* Адаптивность для стрелок */
+    @media (max-width: 768px) {
+      .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+      
+      .arrow.prev-arrow {
+        left: -15px;
+      }
+      
+      .arrow.next-arrow {
+        right: -15px;
+      }
+    }
+    
+    /* Индикатор загрузки/перетаскивания */
+    .drag-indicator {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .drag-indicator.visible {
+      opacity: 1;
+    }
