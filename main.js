@@ -1,4 +1,4 @@
-        function toggleCityDropdown() {
+      function toggleCityDropdown() {
             document.getElementById('cityDropdown').classList.toggle('active');
         }
         
