@@ -12,14 +12,16 @@
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <div class="logo">Фасад<span>Профи</span></div>
+          <a href="/">
+            <div class="logo">Фасад<span>Профи</span></div>
+          </a>
           <nav>
             <ul>
               <li><a href="#services">Услуги</a></li>
               <li><a href="#projects">Проекты</a></li>
-              <li><a href="#order">Заказать</a></li>
+              <li><a href="#contact">Заказать</a></li>
               <li><a href="#reviews">Отзывы</a></li>
-              <li><a href="#contacts">Контакты</a></li>
+              <li><a href="#contact">Контакты</a></li>
             </ul>
           </nav>
           <div class="contact-header">
@@ -54,10 +56,14 @@
               <h1 class="hero__title">
                 <span>Профессиональное утепление фасадов</span> под ключ
               </h1>
-              <button class="hero__btn btn">Рассчитать стоимость</button>
-              <button class="hero__btn hero__btn-accent btn">
-                Подробнее об услугах
-              </button>
+              <a href="#contact">
+                <button class="hero__btn btn">Рассчитать стоимость</button>
+              </a>
+              <a href="#contact">
+                <button class="hero__btn hero__btn-accent btn">
+                  Подробнее об услугах
+                </button>
+              </a>
             </div>
             <div class="hero__text-right">
               <div class="hero__right-inner">
@@ -107,9 +113,9 @@
                 <li class="services__card-item">Снижение теплопотерь до 40%</li>
                 <li class="services__card-item">Срок выполнения: до 3 дней</li>
               </ul>
-              <div class="services__card-price">От 3 500 ₽/м²</div>
             </div>
             <div class="services__card-price">От 3 500 ₽/м²</div>
+            <button class="services__btn btn">Заказать</button>
           </div>
           <div class="service-card">
             <img class="services__img" src="/images/services-1.jpg" alt="" />
@@ -132,6 +138,7 @@
               </ul>
             </div>
             <div class="services__card-price">От 3 500 ₽/м²</div>
+            <button class="services__btn btn">Заказать</button>
           </div>
           <div class="service-card">
             <img class="services__img" src="/images/services-3.jpg" alt="" />
@@ -145,6 +152,7 @@
               </ul>
             </div>
             <div class="services__card-price">От 3 500 ₽/м²</div>
+            <button class="services__btn btn">Заказать</button>
           </div>
         </div>
       </div>
@@ -251,21 +259,62 @@
     <section id="reviews" class="reviews">
       <div class="container">
         <h2>Отзывы клиентов</h2>
-        <div class="reviews-slider">
-          <div class="review-card">
-            <img src="/images/rew-1.png" alt="" />
+        <div class="reviews-slider-wrapper">
+          <!-- Стрелка слева -->
+          <div class="reviews-arrow reviews-arrow-prev">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
-          <div class="review-card">
-            <img src="/images/rew-2.png" alt="" />
+
+          <!-- Слайдер -->
+          <div class="reviews-slider">
+            <div class="review-card">
+              <img src="/images/rew-1.png" alt="" />
+            </div>
+            <div class="review-card">
+              <img src="/images/rew-2.png" alt="" />
+            </div>
+            <div class="review-card">
+              <img src="/images/rew-3.png" alt="" />
+            </div>
           </div>
-          <div class="review-card">
-            <img src="/images/rew-3.png" alt="" />
+
+          <!-- Стрелка справа -->
+          <div class="reviews-arrow reviews-arrow-next">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <div class="contact__inner">
           <div class="contact__social">
@@ -468,7 +517,9 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          <div class="footer__logo logo">Фасад<span>Профи</span></div>
+          <a href="/">
+            <div class="footer__logo logo">Фасад<span>Профи</span></div>
+          </a>
           <div class="footer__right">
             <ul class="footer__nav">
               <li><a href="#services">Услуги</a></li>

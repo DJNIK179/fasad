@@ -303,3 +303,114 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", checkSliderMode);
 });
 
+// Инициализация слайдера отзывов
+function initReviewsSlider() {
+  const reviewsSlider = document.querySelector('.reviews-slider');
+  const reviewCards = document.querySelectorAll('.review-card');
+  const prevArrow = document.querySelector('.reviews-arrow-prev');
+  const nextArrow = document.querySelector('.reviews-arrow-next');
+  
+  if (!reviewsSlider || reviewCards.length === 0) return;
+  
+  let currentIndex = 0;
+  let isDragging = false;
+  let startX, startScrollLeft;
+  const cardWidth = reviewCards[0].offsetWidth + 20; // width + margin
+  
+  // Функция для обновления позиции слайдера
+  function updateSliderPosition() {
+    reviewsSlider.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Обработчики для стрелок
+  prevArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition();
+    }
+  });
+  
+  nextArrow.addEventListener('click', () => {
+    if (currentIndex < reviewCards.length - 1) {
+      currentIndex++;
+      updateSliderPosition();
+    }
+  });
+  
+  // Функционал свайпа/перетаскивания
+  function initDragToScroll() {
+    // Mouse events
+    reviewsSlider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      reviewsSlider.classList.add('grabbing');
+      startX = e.pageX - reviewsSlider.offsetLeft;
+      startScrollLeft = reviewsSlider.scrollLeft;
+    });
+    
+    reviewsSlider.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      const x = e.pageX - reviewsSlider.offsetLeft;
+      const walk = (x - startX) * 2; // Умножаем для более быстрой прокрутки
+      reviewsSlider.scrollLeft = startScrollLeft - walk;
+    });
+    
+    // Touch events
+    reviewsSlider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      reviewsSlider.classList.add('grabbing');
+      startX = e.touches[0].pageX - reviewsSlider.offsetLeft;
+      startScrollLeft = reviewsSlider.scrollLeft;
+    });
+    
+    reviewsSlider.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      
+      const x = e.touches[0].pageX - reviewsSlider.offsetLeft;
+      const walk = (x - startX) * 2;
+      reviewsSlider.scrollLeft = startScrollLeft - walk;
+    });
+    
+    // Завершение перетаскивания
+    function endDrag() {
+      isDragging = false;
+      reviewsSlider.classList.remove('grabbing');
+      
+      // Определяем текущий слайд после завершения свайпа
+      const scrollPos = reviewsSlider.scrollLeft;
+      currentIndex = Math.round(scrollPos / cardWidth);
+      updateSliderPosition();
+    }
+    
+    reviewsSlider.addEventListener('mouseup', endDrag);
+    reviewsSlider.addEventListener('mouseleave', endDrag);
+    reviewsSlider.addEventListener('touchend', endDrag);
+    
+    // Предотвращаем выделение текста при перетаскивании
+    reviewsSlider.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+  }
+  
+  // Предотвращаем появление строки ввода при клике на мобильных устройствах
+  reviewCards.forEach(card => {
+    card.addEventListener('touchstart', (e) => {
+      e.preventDefault(); // Предотвращаем стандартное поведение
+    }, { passive: false });
+    
+    card.addEventListener('click', (e) => {
+      // Дополнительная защита от нежелательного поведения
+      e.preventDefault();
+    });
+  });
+  
+  // Инициализируем функционал свайпа
+  initDragToScroll();
+}
+
+// Добавьте вызов функции в ваш основной код
+document.addEventListener('DOMContentLoaded', initReviewsSlider);
